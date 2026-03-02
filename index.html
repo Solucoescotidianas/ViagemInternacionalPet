@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Zero Barramento™ — Kit Completo para Viagem Internacional com Pets 2026</title>
+  <meta name="description" content="Zero Barramento™ — Kit Completo para Viagem Internacional com Pets 2026. Protocolo técnico 6–90–10 para documentação, previsibilidade e segurança na viagem." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================================
+       Zero Barramento™ - Landing Page (single file)
+       - Sem frameworks
+       - Mobile-first
+       - Institucional: azul escuro + verde confiança
+       ========================================================= */
+    :root{
+      --ink:#0f172a;
+      --ink-2:#111827;
+      --green:#16a34a;
+      --bg:#f1f5f9;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --shadow:0 10px 30px rgba(15,23,42,.08);
+      --radius:16px;
+      --container:1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink-2);
+      background:var(--bg);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:inherit;text-decoration:none}
+    button{font-family:inherit}
+
+    .container{width:min(var(--container),calc(100% - 40px));margin:0 auto}
+    .section{padding:72px 0}
+    @media(min-width:880px){.section{padding:96px 0}}
+
+    .section-header{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+    .kicker{
+      display:inline-flex;align-items:center;gap:10px;
+      font-weight:700;letter-spacing:.02em;color:var(--ink);opacity:.92
+    }
+    .kicker .dot{
+      width:10px;height:10px;border-radius:999px;background:var(--green);
+      box-shadow:0 0 0 6px rgba(22,163,74,.12)
+    }
+
+    h1,h2,h3{margin:0;line-height:1.2;letter-spacing:-0.02em}
+    h1{font-size:clamp(2rem,4vw,3.1rem);font-weight:800;color:#fff}
+    h2{font-size:clamp(1.45rem,2.5vw,2.1rem);font-weight:800;color:var(--ink)}
+    h3{font-size:1.05rem;font-weight:800;color:var(--ink)}
+    p{margin:0}
+    .muted{color:var(--muted)}
+
+    /* Topbar */
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(10px);
+      background:rgba(241,245,249,.75);
+      border-bottom:1px solid rgba(229,231,235,.7);
+    }
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:14px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:220px}
+    .brand-badge{
+      width:38px;height:38px;border-radius:12px;
+      background:linear-gradient(135deg,var(--ink),#0b1226);
+      box-shadow:0 12px 24px rgba(15,23,42,.18);
+      display:grid;place-items:center;color:#fff;font-weight:900;letter-spacing:.02em
+    }
+    .brand strong{display:block;font-size:.95rem;color:var(--ink)}
+    .brand span{display:block;font-size:.8rem;color:var(--muted);margin-top:-2px}
+
+    .nav{display:none;gap:18px;align-items:center;color:#334155;font-weight:700;font-size:.9rem}
+    .nav a{padding:8px 10px;border-radius:10px}
+    .nav a:hover{background:rgba(15,23,42,.06)}
+    @media(min-width:980px){.nav{display:flex}}
+
+    /* Buttons */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 16px;border-radius:12px;border:1px solid transparent;
+      cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease,border-color .15s ease;
+      font-weight:800;white-space:nowrap;user-select:none
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:var(--green);color:#fff;box-shadow:0 14px 30px rgba(22,163,74,.18)}
+    .btn-primary:hover{background:#128a3f;box-shadow:0 18px 38px rgba(22,163,74,.22)}
+    .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.18)}
+    .btn-ghost:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22)}
+    .btn-wide{padding:14px 18px;border-radius:14px;width:100%}
+    @media(min-width:560px){.btn-wide{width:auto}}
+
+    /* Hero */
+    .hero{
+      position:relative;color:#fff;
+      background:
+        radial-gradient(1100px 600px at 15% 10%, rgba(22,163,74,.18), transparent 60%),
+        radial-gradient(1000px 620px at 75% 0%, rgba(59,130,246,.18), transparent 55%),
+        linear-gradient(180deg,var(--ink),#0b1226);
+      overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .hero::before{
+      content:"";position:absolute;inset:-2px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px) 0 0 / 56px 56px,
+        linear-gradient(180deg, rgba(255,255,255,.045) 1px, transparent 1px) 0 0 / 56px 56px;
+      opacity:.35;pointer-events:none;
+      mask-image:radial-gradient(closest-side at 20% 20%, rgba(0,0,0,1), rgba(0,0,0,.15), rgba(0,0,0,0));
+    }
+    .hero-inner{position:relative;padding:72px 0 64px;display:grid;gap:26px;align-items:start}
+    @media(min-width:960px){
+      .hero-inner{grid-template-columns:1.25fr .9fr;gap:40px;padding:96px 0 88px;align-items:center}
+    }
+    .hero p{color:rgba(255,255,255,.86);font-size:1.05rem;max-width:60ch}
+
+    .badge{
+      display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;
+      background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);
+      font-weight:800;font-size:.85rem;color:rgba(255,255,255,.92);width:fit-content
+    }
+    .badge .pill{
+      padding:5px 10px;border-radius:999px;background:rgba(22,163,74,.18);
+      border:1px solid rgba(22,163,74,.35);color:#d1fae5;font-weight:900;letter-spacing:.02em;font-size:.8rem
+    }
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+
+    .hero-card{
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+      border-radius:var(--radius);padding:18px;box-shadow:0 18px 50px rgba(0,0,0,.22)
+    }
+    .hero-card h3{color:#fff;font-size:1.05rem}
+    .hero-card p{color:rgba(255,255,255,.80);font-size:.95rem;margin-top:8px}
+
+    .hero-metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+    .metric{
+      border-radius:14px;padding:12px;background:rgba(15,23,42,.35);
+      border:1px solid rgba(255,255,255,.12)
+    }
+    .metric strong{display:block;color:#fff;font-size:1.05rem;letter-spacing:-0.02em}
+    .metric span{display:block;color:rgba(255,255,255,.75);font-size:.82rem;margin-top:2px}
+
+    /* Grids & cards */
+    .grid{display:grid;gap:14px}
+    @media(min-width:720px){
+      .grid.cols-2{grid-template-columns:1fr 1fr}
+      .grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+    }
+    .card{
+      background:var(--card);border:1px solid var(--line);
+      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)
+    }
+    .card.soft{box-shadow:none;background:rgba(255,255,255,.85)}
+    .card-title{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px}
+
+    .icon{
+      width:34px;height:34px;border-radius:12px;display:grid;place-items:center;
+      background:rgba(22,163,74,.10);border:1px solid rgba(22,163,74,.22);color:var(--green);
+      flex:0 0 auto
+    }
+
+    /* Structured list (riscos) */
+    .list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+    .li{
+      display:flex;gap:10px;align-items:flex-start;padding:12px 12px;border-radius:14px;
+      background:rgba(255,255,255,.72);border:1px solid rgba(229,231,235,.9)
+    }
+    .li strong{display:block;font-size:.95rem;color:var(--ink);font-weight:900}
+    .li span{display:block;color:var(--muted);font-size:.92rem;margin-top:2px}
+    .li .mini{
+      width:28px;height:28px;border-radius:10px;display:grid;place-items:center;
+      background:rgba(15,23,42,.05);border:1px solid rgba(15,23,42,.08);color:#334155;
+      flex:0 0 auto;margin-top:1px
+    }
+
+    /* Protocol steps */
+    .steps{display:grid;gap:14px}
+    @media(min-width:920px){.steps{grid-template-columns:1fr 1fr 1fr;gap:16px}}
+    .step{
+      position:relative;padding:18px;border-radius:var(--radius);
+      background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden
+    }
+    .step::before{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(135deg, rgba(22,163,74,.10), transparent 55%);
+      opacity:.9;pointer-events:none
+    }
+    .step-header{position:relative;display:flex;align-items:flex-start;gap:12px;margin-bottom:8px}
+    .step-num{
+      width:40px;height:40px;border-radius:14px;display:grid;place-items:center;
+      background:rgba(15,23,42,.92);color:#fff;font-weight:900;letter-spacing:.02em;flex:0 0 auto;
+      border:1px solid rgba(255,255,255,.10)
+    }
+    .step p{position:relative;color:#334155;margin-top:6px;font-size:.95rem}
+    .step .meta{position:relative;margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    .tag{
+      display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(15,23,42,.10);background:rgba(15,23,42,.04);
+      color:#334155;font-weight:800;font-size:.82rem
+    }
+
+    /* Benefits */
+    .checks{display:grid;gap:10px;margin-top:14px}
+    .check{
+      display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:14px;
+      background:rgba(255,255,255,.72);border:1px solid rgba(229,231,235,.9)
+    }
+    .check .ok{
+      width:24px;height:24px;border-radius:8px;background:rgba(22,163,74,.14);
+      border:1px solid rgba(22,163,74,.28);color:var(--green);display:grid;place-items:center;
+      flex:0 0 auto;margin-top:1px
+    }
+    .check strong{display:block;color:var(--ink);font-size:.95rem;font-weight:900}
+    .check span{display:block;color:var(--muted);font-size:.92rem;margin-top:2px}
+
+    /* Offer */
+    .offer-wrap{display:grid;gap:16px;align-items:start}
+    @media(min-width:980px){.offer-wrap{grid-template-columns:1.1fr .9fr;gap:20px}}
+    .offer-box{
+      background:#fff;border:1px solid var(--line);
+      border-radius:calc(var(--radius) + 4px);padding:20px;
+      box-shadow:0 20px 55px rgba(15,23,42,.10)
+    }
+    .price{display:flex;align-items:baseline;gap:10px;margin:12px 0 10px}
+    .price strong{font-size:2.25rem;letter-spacing:-0.03em;color:var(--ink);font-weight:900}
+    .price span{color:var(--muted);font-weight:800;font-size:.95rem}
+
+    .guarantee{
+      display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:14px;
+      background:rgba(22,163,74,.08);border:1px solid rgba(22,163,74,.18);
+      margin-top:14px;color:#14532d
+    }
+    .guarantee strong{display:block;font-size:.95rem;color:#14532d;font-weight:900}
+    .guarantee span{display:block;color:rgba(20,83,45,.78);font-size:.92rem;margin-top:2px}
+
+    /* FAQ */
+    .faq{display:grid;gap:10px;margin-top:16px}
+    .faq-item{
+      border-radius:var(--radius);border:1px solid var(--line);
+      background:#fff;box-shadow:var(--shadow);overflow:hidden
+    }
+    .faq-q{
+      width:100%;text-align:left;border:0;background:transparent;
+      padding:16px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+      cursor:pointer;color:var(--ink);font-weight:900;letter-spacing:-0.01em;list-style:none
+    }
+    summary::-webkit-details-marker{display:none}
+    .faq-q:hover{background:rgba(15,23,42,.03)}
+    .chev{
+      width:34px;height:34px;border-radius:12px;border:1px solid rgba(15,23,42,.10);
+      background:rgba(15,23,42,.04);display:grid;place-items:center;transition:transform .2s ease;flex:0 0 auto
+    }
+    .faq-item[open] .chev{transform:rotate(180deg)}
+    .faq-a{padding:0 16px 16px 16px;color:#334155;font-size:.95rem}
+
+    /* Footer */
+    footer{padding:32px 0;border-top:1px solid rgba(229,231,235,.8);color:#475569;font-size:.9rem}
+    .footer-inner{display:flex;flex-direction:column;gap:10px;align-items:flex-start;justify-content:space-between}
+    @media(min-width:860px){.footer-inner{flex-direction:row;align-items:center}}
+
+    /* Scroll reveal */
+    .reveal{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.is-visible{opacity:1;transform:translateY(0)}
+
+    /* Small utilities */
+    .pill-note{
+      display:inline-flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;
+      border:1px solid rgba(229,231,235,.9);background:rgba(255,255,255,.78);color:#334155;
+      margin-top:14px;font-weight:700;font-size:.92rem
+    }
+    .pill-note code{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      font-weight:900;font-size:.9rem;padding:2px 8px;border-radius:999px;
+      background:rgba(15,23,42,.06);border:1px solid rgba(15,23,42,.10);color:var(--ink)
+    }
+    .divider{height:1px;background:rgba(229,231,235,.9);margin:14px 0}
+  </style>
+</head>
+
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="Ir para o topo">
+        <div class="brand-badge" aria-hidden="true">ZB</div>
+        <div>
+          <strong>Zero Barramento™</strong>
+          <span>Protocolo de documentação • 2026</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#riscos">Riscos Reais</a>
+        <a href="#protocolo">Protocolo 6–90–10</a>
+        <a href="#kit">O Kit</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#oferta">Oferta</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <!-- CTA (Topo) -->
+      <a class="btn btn-primary js-checkout" href="https://pay.kiwify.com.br/mcZsVxf">Garantir Acesso</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header id="top" class="hero">
+    <div class="container hero-inner">
+      <div class="reveal">
+        <div class="badge" role="note" aria-label="Selo de atualização">
+          <span class="pill">Atualizado 2026</span>
+          <span>Kit completo para viagem internacional com pets</span>
+        </div>
+
+        <h1 style="margin-top:14px;">
+          Segurança documental para viajar com pets — com um protocolo claro, organizado e previsível.
+        </h1>
+
+        <p style="margin-top:14px;">
+          O <strong>Zero Barramento™</strong> é um kit técnico, objetivo e estruturado para tutores brasileiros que vão sair do Brasil com pets e precisam reduzir risco de
+          <strong>inconsistências</strong>, <strong>atrasos</strong> e <strong>recusas</strong> por documentação incompleta ou fora do padrão.
+        </p>
+
+        <div class="hero-cta">
+          <!-- CTA (Hero) -->
+          <a class="btn btn-primary btn-wide js-checkout" href="https://pay.kiwify.com.br/mcZsVxf" aria-label="Garantir acesso ao kit">
+            Garantir Acesso
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <a class="btn btn-ghost btn-wide" href="#protocolo" aria-label="Ver o protocolo 6 90 10">
+            Ver o Protocolo
+          </a>
+        </div>
+
+        <div class="pill-note" role="note">
+          Estrutura operacional: <code>6–90–10</code> (planejamento, execução e verificação)
+        </div>
+      </div>
+
+      <aside class="hero-card reveal" aria-label="Resumo institucional">
+        <h3>Visão institucional</h3>
+        <p>
+          Uma página de checklist não resolve. O que evita barramento é o conjunto: <strong>processo</strong>, <strong>evidência</strong> e <strong>conferência</strong> —
+          no tempo certo e com rastreabilidade.
+        </p>
+
+        <div class="hero-metrics" role="list" aria-label="Indicadores do kit">
+          <div class="metric" role="listitem">
+            <strong>Documentação</strong>
+            <span>organizada por etapa</span>
+          </div>
+          <div class="metric" role="listitem">
+            <strong>Previsibilidade</strong>
+            <span>reduz retrabalho</span>
+          </div>
+          <div class="metric" role="listitem">
+            <strong>Rastreabilidade</strong>
+            <span>evidências e versões</span>
+          </div>
+          <div class="metric" role="listitem">
+            <strong>Controle</strong>
+            <span>checks antes do embarque</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <!-- Riscos Reais -->
+  <section id="riscos" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="kicker"><span class="dot"></span>Riscos Reais</div>
+        <h2>O que geralmente causa problemas na viagem com pets</h2>
+        <p class="muted">
+          Linguagem objetiva e técnica. O foco é reduzir variáveis, eliminar lacunas e padronizar a conferência.
+        </p>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="card soft reveal">
+          <div class="card-title">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div class="icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 9v4m0 4h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M10.3 3.7 2.7 20.3c-.5 1 .2 2.2 1.3 2.2h16c1.1 0 1.8-1.2 1.3-2.2L13.7 3.7c-.6-1-2.8-1-3.4 0Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Inconsistência entre documentos</h3>
+                <p class="muted">Divergências de dados (tutor, identificação do animal, datas, carimbos) geram questionamentos e atrasos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card soft reveal">
+          <div class="card-title">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div class="icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 8v4l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Janela de prazos mal gerenciada</h3>
+                <p class="muted">Algumas etapas têm validade curta. Erros de timing podem invalidar declarações e exames próximos ao embarque.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card soft reveal">
+          <div class="card-title">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div class="icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M8 7h8M8 11h8M8 15h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M6 3h9l3 3v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Checklist genérica (sem evidência)</h3>
+                <p class="muted">“Ter feito” não é o mesmo que “comprovar”. Falta de evidências e versões dificulta auditoria e revalidação.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card soft reveal">
+          <div class="card-title">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <div class="icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M12 4v16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Falta de padronização operacional</h3>
+                <p class="muted">Sem protocolo, cada etapa vira “tentativa e erro”. Resultado: retrabalho, perda de tempo e custos adicionais.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="list reveal" aria-label="Resumo de risco">
+        <div class="li">
+          <div class="mini" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2 2 7l10 5 10-5-10-5Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+              <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <div>
+            <strong>Risco operacional</strong>
+            <span>Processo não rastreável → aumenta probabilidade de falhas perto do embarque.</span>
+          </div>
+        </div>
+
+        <div class="li">
+          <div class="mini" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <strong>Risco de compliance</strong>
+            <span>Documentos sem padrão, campos divergentes ou ausência de conferência final.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Protocolo -->
+  <section id="protocolo" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="kicker"><span class="dot"></span>O Protocolo 6–90–10</div>
+        <h2>Uma linha de execução em 3 etapas — com timing e verificação</h2>
+        <p class="muted">Planejar com antecedência, executar com organização e validar antes do embarque.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step reveal">
+          <div class="step-header">
+            <div class="step-num" aria-hidden="true">6</div>
+            <div>
+              <h3>6 meses antes</h3>
+              <p class="muted" style="margin-top:4px;">Planejamento e requisitos: estrutura, elegibilidade, risco e documentação-base.</p>
+            </div>
+          </div>
+          <p><strong>Fundação.</strong> Definição do roteiro documental e redução de risco por exigências descobertas tarde.</p>
+          <div class="meta">
+            <span class="tag">requisitos & escopo</span>
+            <span class="tag">estrutura documental</span>
+          </div>
+        </article>
+
+        <article class="step reveal">
+          <div class="step-header">
+            <div class="step-num" aria-hidden="true">90</div>
+            <div>
+              <h3>90 dias antes</h3>
+              <p class="muted" style="margin-top:4px;">Execução com controle: agendamentos, evidências e organização por etapa.</p>
+            </div>
+          </div>
+          <p><strong>Produção.</strong> Consolidação do que fazer, quando fazer e como registrar evidências com consistência.</p>
+          <div class="meta">
+            <span class="tag">cronograma & execução</span>
+            <span class="tag">evidência & rastreio</span>
+          </div>
+        </article>
+
+        <article class="step reveal">
+          <div class="step-header">
+            <div class="step-num" aria-hidden="true">10</div>
+            <div>
+              <h3>10 dias antes</h3>
+              <p class="muted" style="margin-top:4px;">Conferência final: validação cruzada, consistência e pacote pronto.</p>
+            </div>
+          </div>
+          <p><strong>Auditoria.</strong> Verificação de consistência e montagem do pacote final para apresentação rápida e segura.</p>
+          <div class="meta">
+            <span class="tag">validação & consistência</span>
+            <span class="tag">pronto para embarque</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kit -->
+  <section id="kit" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="kicker"><span class="dot"></span>O que está incluso no Kit</div>
+        <h2>Componentes organizados para execução e conferência</h2>
+        <p class="muted">Entregáveis com foco em estrutura operacional, consistência e rastreabilidade.</p>
+      </div>
+
+      <div class="grid cols-3">
+        <div class="card reveal">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M6 3h12v18H6z" stroke="currentColor" stroke-width="2"/>
+                <path d="M9 7h6M9 11h6M9 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Checklist técnico por etapa</h3>
+              <p class="muted">Lista estruturada para execução em fases, com critérios claros de conferência.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M8 21h8a2 2 0 0 0 2-2V7l-4-4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M14 3v4h4" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Modelo de dossiê documental</h3>
+              <p class="muted">Estrutura para montar um pacote final com ordem lógica e apresentação profissional.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2 2 7l10 5 10-5-10-5Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+                <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Mapa de evidências</h3>
+              <p class="muted">Padrão para registrar provas, versões e confirmações (reduzindo retrabalho).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M20 7 10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Script de conferência final</h3>
+              <p class="muted">Procedimento objetivo para validação cruzada antes do embarque.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Organizador de prazos</h3>
+              <p class="muted">Estrutura para monitorar janelas e validade, priorizando o que vence primeiro.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Padrões de segurança documental</h3>
+              <p class="muted">Boas práticas de armazenamento, cópias, acesso e redundância (abordagem conservadora).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider reveal"></div>
+      <p class="muted reveal" style="max-width:80ch;">
+        Importante: o kit é uma <strong>estrutura operacional</strong> para organização e conferência. Ele aumenta clareza, previsibilidade e controle do processo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Benefícios -->
+  <section id="beneficios" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="kicker"><span class="dot"></span>Benefícios</div>
+        <h2>Organização que se traduz em segurança e controle</h2>
+        <p class="muted">Foco em previsibilidade, consistência e redução de risco operacional.</p>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="card reveal">
+          <h3>Benefícios diretos</h3>
+          <div class="checks">
+            <div class="check">
+              <div class="ok" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Redução de incerteza</strong>
+                <span>Etapas claras e critérios de validação para execução segura.</span>
+              </div>
+            </div>
+
+            <div class="check">
+              <div class="ok" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Organização documental</strong>
+                <span>Menos tempo procurando arquivos e evidências.</span>
+              </div>
+            </div>
+
+            <div class="check">
+              <div class="ok" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Conferência final padronizada</strong>
+                <span>Reduz divergências típicas em dados e datas.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <h3>Benefícios estratégicos</h3>
+          <div class="checks">
+            <div class="check">
+              <div class="ok" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Previsibilidade de prazos</strong>
+                <span>Você sabe o que precisa acontecer em cada janela do processo.</span>
+              </div>
+            </div>
+
+            <div class="check">
+              <div class="ok" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Menos retrabalho</strong>
+                <span>Estrutura com evidências e versões reduz correções de última hora.</span>
+              </div>
+            </div>
+
+            <div class="check">
+              <div class="ok" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Postura profissional</strong>
+                <span>Apresentação organizada transmite seriedade e controle.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="muted reveal" style="margin-top:14px;max-width:85ch;">
+        Resultado esperado: um pacote final consistente, com processo verificável — reduzindo as chances de surpresa perto do embarque.
+      </p>
+    </div>
+  </section>
+
+  <!-- Oferta -->
+  <section id="oferta" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="kicker"><span class="dot"></span>Oferta</div>
+        <h2>Kit completo — acesso imediato</h2>
+        <p class="muted">Preço único, garantia e entrega objetiva.</p>
+      </div>
+
+      <div class="offer-wrap">
+        <div class="card reveal">
+          <h3>Para quem é</h3>
+          <p class="muted" style="margin-top:10px;">
+            Tutores brasileiros que vão viajar para fora do Brasil com seus pets e precisam de uma estrutura séria para organizar documentação e prazos.
+          </p>
+
+          <div class="divider"></div>
+
+          <h3>Garantia</h3>
+          <div class="guarantee" role="note" aria-label="Garantia">
+            <div aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M12 22s8-4 8-10V6l-8-4-8 4v6c0 6 8 10 8 10Z" stroke="#16a34a" stroke-width="2"/>
+                <path d="M9 12l2 2 4-5" stroke="#16a34a" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <strong>Garantia de 7 dias</strong>
+              <span>Se não fizer sentido para sua organização, você solicita reembolso dentro do prazo.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="offer-box reveal" aria-label="Box de compra">
+          <div class="kicker"><span class="dot"></span>Acesso ao Zero Barramento™</div>
+          <div class="price" aria-label="Preço">
+            <strong>R$67</strong>
+            <span>pagamento único</span>
+          </div>
+          <p class="muted">
+            Material estruturado para executar o protocolo 6–90–10 com organização e conferência final.
+          </p>
+
+          <div class="divider"></div>
+
+          <!-- CTA (Oferta) -->
+          <a class="btn btn-primary btn-wide js-checkout" href="https://pay.kiwify.com.br/mcZsVxf" aria-label="Garantir acesso ao kit">
+            Garantir Acesso
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <p class="muted" style="margin-top:12px;font-size:.9rem;">
+            Ao clicar, você será direcionado para o checkout seguro.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="kicker"><span class="dot"></span>FAQ</div>
+        <h2>Perguntas frequentes</h2>
+        <p class="muted">Respostas claras, diretas e orientadas a processo.</p>
+      </div>
+
+      <div class="faq" role="list">
+        <details class="faq-item reveal">
+          <summary class="faq-q">
+            <span>Este kit substitui orientação de veterinário ou exigências do país de destino?</span>
+            <span class="chev" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="faq-a">
+            Não. O Zero Barramento™ é um <strong>protocolo de organização e conferência</strong>. Ele ajuda a estruturar etapas, prazos e evidências,
+            mas você deve sempre seguir as exigências aplicáveis (companhia aérea, país de destino e autoridades competentes).
+          </div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-q">
+            <span>Em quanto tempo eu consigo aplicar o protocolo?</span>
+            <span class="chev" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="faq-a">
+            A estrutura foi desenhada para uso imediato: define escopo (6 meses), organiza execução (90 dias) e faz validação final (10 dias).
+            O ganho principal é <strong>clareza</strong> e <strong>controle</strong> — reduzindo retrabalho próximo ao embarque.
+          </div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-q">
+            <span>Serve para cães e gatos?</span>
+            <span class="chev" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="faq-a">
+            Sim. O foco é o <strong>processo documental</strong> e a <strong>conferência de consistência</strong>, respeitando as exigências específicas do destino.
+          </div>
+        </details>
+
+        <details class="faq-item reveal">
+          <summary class="faq-q">
+            <span>Qual a garantia?</span>
+            <span class="chev" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="faq-a">
+            Garantia de <strong>7 dias</strong>. Se o material não atender sua necessidade de organização, você pode solicitar reembolso dentro do prazo.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong style="color:#0f172a;">Zero Barramento™</strong>
+        <div style="margin-top:2px;">© 2026. Todos os direitos reservados.</div>
+      </div>
+      <div class="muted">Página institucional • Visual técnico • Pronta para GitHub Pages</div>
+    </div>
+  </footer>
+
+  <script>
+    /* Accordion: fecha outros ao abrir um */
+    (function setupFaqAccordion(){
+      const items = Array.from(document.querySelectorAll('.faq-item'));
+      items.forEach((item) => {
+        item.addEventListener('toggle', () => {
+          if (item.open) items.forEach((other) => { if (other !== item) other.open = false; });
+        });
+      });
+    })();
+
+    /* Fade-in on scroll (IntersectionObserver) */
+    (function setupRevealOnScroll(){
+      const els = document.querySelectorAll('.reveal');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      els.forEach(el => obs.observe(el));
+    })();
+
+    /* Padroniza todos os CTAs para o mesmo checkout */
+    (function setupCheckoutLinks(){
+      const CHECKOUT_URL = "https://pay.kiwify.com.br/mcZsVxf";
+      const links = document.querySelectorAll('a.js-checkout');
+      links.forEach((a) => {
+        a.setAttribute('href', CHECKOUT_URL);
+        a.setAttribute('rel', 'noopener');
+      });
+    })();
+  </script>
+</body>
+</html>
