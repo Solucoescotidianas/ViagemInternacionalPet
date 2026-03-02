@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zero Barramento™ | Viagem Internacional com Pets 2026</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+header {
+    background: #111827;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto;
+}
+
+section {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+ul {
+    line-height: 1.8;
+}
+
+.cta {
+    background: #16a34a;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.price-box {
+    background: #ffffff;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Viaje com Seu Pet para Fora do Brasil Sem Risco de Barramento</h1>
+<p>O kit completo que organiza toda a burocracia internacional e evita os erros que fazem tutores perderem o embarque.</p>
+<a href="#oferta" class="cta">QUERO VIAJAR COM SEGURANÇA</a>
+</header>
+
+<section>
+<h2>Você tem medo de errar algum documento?</h2>
+<ul>
+<li>Microchip feito na ordem errada</li>
+<li>Erro na sorologia</li>
+<li>CVI rejeitado</li>
+<li>Caixa fora do padrão IATA</li>
+<li>Raça braquicefálica barrada</li>
+</ul>
+<p>Um único erro pode invalidar todo o processo.</p>
+</section>
+
+<section>
+<h2>Conheça o Zero Barramento™</h2>
+<p>Baseado no Protocolo 6–90–10:</p>
+<ul>
+<li>6 meses de planejamento estratégico</li>
+<li>90 dias obrigatórios após sorologia</li>
+<li>10 dias finais decisivos</li>
+</ul>
+<p>Você sabe exatamente o que fazer e quando fazer.</p>
+</section>
+
+<section>
+<h2>O que você recebe</h2>
+<ul>
+<li>Guia Completo Atualizado 2026</li>
+<li>Checklist de Embarque Final</li>
+<li>Planilha Automática de Cronograma</li>
+<li>Modelo de E-mail para Companhias Aéreas</li>
+<li>Checklist para Raças Braquicefálicas</li>
+<li>Pasta Digital Modelo</li>
+</ul>
+</section>
+
+<section id="oferta">
+<div class="price-box">
+<h2>Zero Barramento™ 2026</h2>
+<p style="font-size:22px;"><strong>R$67</strong></p>
+<p>Acesso imediato após pagamento</p>
+<a href="SEU_LINK_DE_PAGAMENTO_AQUI" class="cta">GARANTIR MEU ACESSO AGORA</a>
+<p style="font-size:14px; margin-top:15px;">Garantia de 7 dias</p>
+</div>
+</section>
+
+<div class="footer">
+© 2026 Zero Barramento™ - Todos os direitos reservados
+</div>
+
+</body>
+</html>
